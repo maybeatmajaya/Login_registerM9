@@ -1,5 +1,3 @@
-
-// home.php
 <?php
 session_start();
 require_once 'config.php';
@@ -51,10 +49,10 @@ $users = getAllUsers();
 </head>
 <body>
     <h2>Welcome, <?php echo htmlspecialchars($user['user_fullname']); ?>!</h2>
-    <p>Your email: <?php echo htmlspecialchars($user['user_email']); ?></p>
-    <p>Your level: <?php echo $user['level']; ?></p>
+    <p>Email anda: <?php echo htmlspecialchars($user['user_email']); ?></p>
+    <p>Level anda: <?php echo $user['level']; ?></p>
     
-    <h3>User List</h3>
+    <h3>List User</h3>
     <table>
         <tr>
             <th>ID</th>
@@ -71,7 +69,7 @@ $users = getAllUsers();
             <td><?php echo $u['level']; ?></td>
             <td>
                 <a href="?action=edit&id=<?php echo $u['id']; ?>">Edit</a>
-                <a href="?action=delete&id=<?php echo $u['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                <a href="?action=delete&id=<?php echo $u['id']; ?>" onclick="return confirm('Apakah kamu yakin ?')">Delete</a>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -94,6 +92,6 @@ $users = getAllUsers();
     <?php endif; ?>
 
     <br>
-    <a href="logout.php">Logout</a>
+    <a href="logout.php">Keluar</a>
 </body>
 </html>
